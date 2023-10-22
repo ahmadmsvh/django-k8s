@@ -20,5 +20,5 @@ def main():
 
 
 if __name__ == '__main__':
-    dotenv.load_dotenv()
+    dotenv.load_dotenv() 
     main()
