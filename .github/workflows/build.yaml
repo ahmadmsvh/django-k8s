@@ -9,11 +9,11 @@ on:
     branches: [main]
 
 jobs:
-  test_django_job:
+  test_django:
     uses: codingforentrepreneurs/Django-Kubernetes/.github/workflows/test-django.yaml@main
   build:
     runs-on: ubuntu-latest
-    needs: [test_django_job]
+    needs: [test_django]
     env:
       CLUSTER_NAME: django-k8s
     steps:
