@@ -25,10 +25,10 @@ jobs:
       - name: Build container image
         working-directory: k8s/nginx test
         run: |
-          docker build -f Dockerfile \
+          docker build -f k8s/nginx test/Dockerfile \
             -t registry.digitalocean.com/ahmadmsvh-k8s/nginx-doc:latest \
             -t registry.digitalocean.com/ahmadmsvh-k8s/nginx-doc:${GITHUB_SHA::7}-${GITHUB_RUN_ID::5} \
-            .
+            k8s/nginx test/.
       - name: Push image
         run: |
           docker push registry.digitalocean.com/ahmadmsvh-k8s/django-k8s-web --all-tags
