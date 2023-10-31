@@ -1,4 +1,4 @@
-name: Build Docker Container & Push to DO Registry
+name: nginx-doc Build Docker Container & Push to DO Registry
 
 on:
   workflow_call:
@@ -23,7 +23,7 @@ jobs:
       - name: Login to DO Container Registry with short-lived creds
         run: doctl registry login --expiry-seconds 1200
       - name: Build container image
-        working-directory: ./k8s/nginx\ test
+        working-directory: ./k8s/"nginx test"
         run: |
           docker build -f Dockerfile \
             -t registry.digitalocean.com/ahmadmsvh-k8s/nginx-doc:latest \
