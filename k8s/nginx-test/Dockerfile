@@ -2,6 +2,6 @@ FROM nginx:latest
 
 COPY ./proxy/default.conf /etc/nginx/conf.d/default.conf
 
-COPY ./statics/ /usr/share/nginx/html/
+RUN mkdir /usr/share/nginx/html/statics
 
-RUN chmod +x /usr/share/nginx/html/signaler.sh 
+COPY ./statics/ /usr/share/nginx/html/statics
