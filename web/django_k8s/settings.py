@@ -92,13 +92,20 @@ DB_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
 DB_DATABASE = os.environ.get("POSTGRES_DB")
 DB_HOST = os.environ.get("POSTGRES_HOST")
 DB_PORT = os.environ.get("POSTGRES_PORT")
+POSTGRES_READY = os.environ.get("POSTGRES_READY")
+
 DB_IS_AVAIL = all([
+    POSTGRES_READY,
     DB_USERNAME,
     DB_PASSWORD,
     DB_DATABASE,
     DB_HOST,
     DB_PORT
 ])
+
+print("POSTGRES_READY: ", POSTGRES_READY)
+print("DB_IS_AVAIL: ", DB_IS_AVAIL)
+
 DB_IGNORE_SSL=os.environ.get("DB_IGNORE_SSL") == "true"
 # POSTGRES_READY=str(os.environ.get('POSTGRES_READY')) == "1"
 

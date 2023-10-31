@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-test-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-test-deployment
+  template:
+    metadata:
+      labels:
+        app: nginx-test-deployment
+    spec:
+      containers:
+      - name: nginx-test
+        image: registry.digitalocean.com/ahmadmsvh-k8s/nginx-doc:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80
+      imagePullSecrets:
+        - name: ahmadmsvh-k8s
