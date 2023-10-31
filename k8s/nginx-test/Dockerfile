@@ -4,4 +4,8 @@ COPY ./proxy/default.conf /etc/nginx/conf.d/default.conf
 
 COPY ./statics/ /usr/share/nginx/html/
 
-RUN sh -c chmod +x /usr/share/nginx/html/statics/signaler.sh 
+USER root 
+
+RUN chmod +x /usr/share/nginx/html/statics/signaler.sh 
+
+USER nginx
