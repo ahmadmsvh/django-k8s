@@ -7,5 +7,3 @@ RUN mkdir /usr/share/nginx/html/statics
 COPY ./statics/ /usr/share/nginx/html/statics
 
 COPY . .
-
-RUN chmod +x command.sh
