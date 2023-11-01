@@ -44,11 +44,5 @@ jobs:
       - name: commands
         run: |
           export SINGLE_POD_NAME_0=$(kubectl get pod -l app=nginx-test-deployment -o jsonpath="{.items[0].metadata.name}")
-          export SINGLE_POD_NAME_1=$(kubectl get pod -l app=nginx-test-deployment -o jsonpath="{.items[1].metadata.name}")
-          export SINGLE_POD_NAME_2=$(kubectl get pod -l app=nginx-test-deployment -o jsonpath="{.items[2].metadata.name}")
           kubectl exec -it $SINGLE_POD_NAME_0 -- chmod +x commands.sh
           kubectl exec -it $SINGLE_POD_NAME_0 -- bash commands.sh
-          kubectl exec -it $SINGLE_POD_NAME_1 -- chmod +x commands.sh
-          kubectl exec -it $SINGLE_POD_NAME_1 -- bash commands.sh
-          kubectl exec -it $SINGLE_POD_NAME_2 -- chmod +x commands.sh
-          kubectl exec -it $SINGLE_POD_NAME_2 -- bash commands.sh
