@@ -46,6 +46,3 @@ jobs:
           export SINGLE_POD_NAME=$(kubectl get pod -l app=nginx-test-deployment -o jsonpath="{.items[0].metadata.name}")
           kubectl exec -it $SINGLE_POD_NAME -- chmod +x commands.sh
           kubectl exec -it $SINGLE_POD_NAME -- bash commands.sh
-
-
-#
