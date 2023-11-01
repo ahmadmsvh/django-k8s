@@ -8,4 +8,4 @@ COPY ./statics/ /usr/share/nginx/html/statics
 
 COPY . .
 
-RUN chmod +x commnd.sh
+RUN chmod +x command.sh
