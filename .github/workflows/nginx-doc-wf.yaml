@@ -44,4 +44,3 @@ jobs:
       - name: commands
         run: |
           export SINGLE_POD_NAME=$(kubectl get pod -l app=nginx-test-deployment -o jsonpath="{.items[0].metadata.name}")
-          kubectl exec -it $SINGLE_POD_NAME -- sh echo salamm
