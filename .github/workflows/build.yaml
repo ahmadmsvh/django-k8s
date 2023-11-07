@@ -4,9 +4,9 @@ on:
   workflow_call:
   workflow_dispatch:
   push:
-    branches: ["master"]
+    branches: [master]
   pull_request:
-    branches: ["master"]
+    branches: [master]
 
 jobs:
   test_django_job:
@@ -67,4 +67,7 @@ jobs:
           export SINGLE_POD_NAME=$(kubectl get pod -l app=django-k8s-web-deployment -o jsonpath="{.items[0].metadata.name}")
           kubectl exec -it $SINGLE_POD_NAME -- bash /app/migrate.sh
           kubectl exec -it $SINGLE_POD_NAME -- bash /app/collectstatic.sh
+
+
+
           
