@@ -15,6 +15,10 @@ def portfolio(request):
 justify-content: center;">
     <h1 style="color: aliceblue;">This is going to become a fabulous blog for programmrs</h1>
 </div>
+<div style="height: 100px; background-color: rgb(57, 77, 107)); display: flex; align-items: center;
+justify-content: center;">
+    <h1 style="color: aliceblue;">django/devops</h1>
+</div>
 '''
     # cats_load.run() 
     return HttpResponse(response)
