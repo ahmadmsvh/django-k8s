@@ -41,6 +41,8 @@ jobs:
       - name: Update deployment secrets
         run: |
           cat << EOF >> web/.env.prod
+          AWS_ACCESS_KEY_ID=DO00GTVLHHTPDFC3DHVH
+          AWS_SECRET_ACCESS_KEY=4u84V7J4oRRlwxe9AFp4j1DHH+vdrnx2EWB7oh4Eo0M
           DJANGO_SUPERUSER_USERNAME=admin
           DJANGO_SUPERUSER_PASSWORD=by62cwAjFRH2nx8Usxczv7gwE1fH6yaDfxWuNq0tfKY
           DJANGO_SUERPUSER_EMAIL=$ahmadmsvh@gmail.com
