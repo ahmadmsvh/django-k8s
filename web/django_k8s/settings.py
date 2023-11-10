@@ -177,8 +177,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_ROOT = BASE_DIR / "staticfiles-cdn"
 
-STATICFILES_DIRS= [
+STATICFILES_DIRS = [
     BASE_DIR / "staticfiles"
-
 ]
-from .cdn.conf import *
+
+from .cdn.conf import * # noqa
